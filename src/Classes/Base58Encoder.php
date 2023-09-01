@@ -1,6 +1,11 @@
 <?php
 
-use JetBrains\PhpStorm\ExpectedValues;
+/**
+ * @method encode(string $numericId)
+ */
+
+
+namespace Shortener\Elena;
 
 class Base58Encoder
 {

@@ -1,5 +1,7 @@
 <?php
 
+namespace Shortener\Elena;
+
 class URLshortener
 {
     //в последствии у нас может быть много кодировщиков,

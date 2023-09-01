@@ -1,0 +1,17 @@
+{
+    "name": "url-shortener/elena",
+    "description": "\"\"",
+    "autoload": {
+        "psr-4": {
+            "UrlShortener\\Elena\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Elena"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    }
+}

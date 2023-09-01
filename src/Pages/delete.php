@@ -1,4 +1,10 @@
 <?php
+namespace UrlSHortener\Elena;
+
+use Shortener\Elena\Url;
+
+unset($_SESSION['connection_error_message']);
+unset($_SESSION['encoder-error']);
 
 if (isset($_GET['delete-id'])) {
 

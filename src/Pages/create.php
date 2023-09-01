@@ -1,6 +1,12 @@
 <?php
 
-$success = "";
+namespace UrlSHortener\Elena;
+
+use Shortener\Elena\Url;
+use Shortener\Elena\URLshortener;
+
+unset($_SESSION['connection_error_message']);
+unset($_SESSION['encoder-error']);
 
 if (isset($_POST['send'])) {
     if (isset($_POST['long-url'])) {
@@ -11,6 +17,7 @@ if (isset($_POST['send'])) {
             if (isset($url["scheme"])) {
                 $longUrl = $_POST['long-url'];
             } else {
+                unset($success);
                 echo "<div class=\"alert alert-danger\">URL не прошел валидацию.</br>" .
                 "Убедитесь, что он соответсвует формату <i>https://site.com/page=somepage?param=1<i></div>";
             }
@@ -31,15 +38,18 @@ if (isset($_POST['send'])) {
                 if ($url->create($longUrl,$encodedPath, $randId)) {
                     $success = 'Ваш короткий URL: ' . $url->shortUrl . '</div>';
                 } else {
+                    unset($success);
                     echo "<div class=\"alert alert-danger w-50\">Короткая ссылка на такой URL уже существует.</div>";
                 }
             }
         } else {
             echo $alert;
+            unset($success);
+        
         }
     } else {
     
-        $success = "";
+        unset($success);
     }
 }
 ?>
@@ -49,6 +59,6 @@ if (isset($_POST['send'])) {
     <input type="submit" name="send" value="Отправить">
 </form>
 
-<?php if (isset($success)) : ?>
-    <div class="alert alert-success w-50 m-2"><? echo $success ?></div>
+<?php if (isset($success)):?>
+    <div class="alert alert-success w-50 m-2">{$success}></div>";
 <? endif; ?>

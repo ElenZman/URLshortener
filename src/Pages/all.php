@@ -1,3 +1,12 @@
+<?php 
+
+namespace UrlSHortener\Elena;
+
+use Paginator;
+
+unset($_SESSION['connection_error_message']);
+unset($_SESSION['encoder-error']);
+?>
 
 <div class="container">
 <div class="table-responsive mb-1">

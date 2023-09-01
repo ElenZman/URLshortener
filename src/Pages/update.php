@@ -1,5 +1,13 @@
 <?php
 
+namespace UrlSHortener\Elena;
+
+use Shortener\Elena\Url;
+use Shortener\Elena\URLshortener;
+
+unset($_SESSION['connection_error_message']);
+unset($_SESSION['encoder-error']);
+
 if(isset($_GET['update-id'])){
 
 $id= $_GET['update-id'];

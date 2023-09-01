@@ -1,5 +1,10 @@
 <?php
 
+namespace Shortener\Elena;
+
+use PDO;
+use PDOException;
+
 class Url
 {
 

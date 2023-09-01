@@ -1,12 +1,17 @@
 <?php
-session_start();
-$config = include('C:/OpenServer/domains/URLshortener/app/config.php');
 
-require_once(APP_DIR.'Classes/Base58Encoder.php');
-require_once(APP_DIR.'Classes/DbConnection.php');
-require_once(APP_DIR.'Classes/Url.php');
-require_once(APP_DIR.'Classes/URLShortener.php');
-require_once(APP_DIR.'Classes/Paginator.php');
+namespace UrlSHortener\Elena; 
+
+session_start();
+
+require_once 'C:/OpenServer/domains/URLshortener/vendor/autoload.php';
+$config = include('C:/OpenServer/domains/URLshortener/src/config.php');
+
+require_once(APP_DIR.'/Classes/Base58Encoder.php');
+require_once(APP_DIR.'/Classes/DbConnection.php');
+require_once(APP_DIR.'/Classes/Url.php');
+require_once(APP_DIR.'/Classes/URLShortener.php');
+require_once(APP_DIR.'/Classes/Paginator.php');
 
 include('partials/header.php');
 ?>

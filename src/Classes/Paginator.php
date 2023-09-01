@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Этот класс реализует пагинацию. Конструктор получает в качестве параметра 
  * количество строк, которые будут отражатся на странице. Основной метод getData()
@@ -12,7 +11,13 @@
  * @author Zmanovskaya Elena
  */
 
-class Paginator
+
+namespace Shortener\Elena;
+
+use PDO;
+use PDOException;
+
+ class Paginator
 {
     private DbConnection $connection;
 
