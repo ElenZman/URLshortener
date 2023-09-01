@@ -26,7 +26,7 @@ class DbConnection
             return $pdo;
         } catch (PDOException $e) {   
             $message= PHP_EOL .$e->getMessage() . 'with code ' . $e->getCode();
-            error_log($message, 3, "error-log.php");
+            error_log($message, 3, APP_DIR ."error-log.php");
             throw new ConnectionFailedException(); 
         }
     }

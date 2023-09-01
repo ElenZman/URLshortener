@@ -60,5 +60,5 @@ if (isset($_POST['send'])) {
 </form>
 
 <?php if (isset($success)):?>
-    <div class="alert alert-success w-50 m-2">{$success}></div>";
+    <div class="alert alert-success w-50 m-2"><? echo $success ?></div>";
 <? endif; ?>

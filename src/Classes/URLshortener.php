@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * генерирует рандомное число, которое использует для кодирования,
+ * осуществляет кодировку 
+ * 
+ * @method encode(string $numericId)
+ * @method map(int $number)
+ * 
+ * @author Zmanovskaya Elena
+ */
+
 namespace Shortener\Elena;
 
 class URLshortener

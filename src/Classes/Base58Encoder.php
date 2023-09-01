@@ -1,7 +1,12 @@
 <?php
 
 /**
- * @method encode(string $numericId)
+ * реализует упрощенный алгоритм кодирования Base58 
+ * 
+ * @method encode(string $numericId) 
+ * @method map(int $number)
+ * 
+ * @author Zmanovskaya Elena
  */
 
 
@@ -17,7 +22,7 @@ class Base58Encoder
     return $this->symbols[$number];
   }
 
-  public function encode(string $numericId): string | false {
+  public function encode(string $numericId): string {
 
     $number = intval($numericId);
     $mapped = "";

@@ -2,7 +2,9 @@
 
 namespace UrlSHortener\Elena;
 
-use Paginator;
+require_once(APP_DIR.'/Classes/Paginator.php');
+use Shortener\Elena\Paginator;
+
 
 unset($_SESSION['connection_error_message']);
 unset($_SESSION['encoder-error']);
@@ -30,22 +32,24 @@ unset($_SESSION['encoder-error']);
                 $currentPage = 1;
             }
 
-            $result = $paginator->getData($currentPage);
-            foreach ($result as $url) : ?>
+            $result = $paginator->getData($currentPage);?>
+           <? if ($result !=false):?>
+           <? foreach ($result as $url) : ?>
                 <tr>
                     <td scope="row"><? echo $url['id'] ?></td>
                     <td scope="row"><? echo $url['long_url'] ?></td>
                     <td scope="row"><? echo $url['short_url'] ?></td>
                     <td scope="row"><? echo $url['generation_date'] ?></td>
                     <?php $id = $url['id'];
-                    $hrefUpdate = "<a class=\"btn\" href=index.php?page=update&update-id={$id}><i class=\"bi bi-arrow-repeat\"></i></a>";              
-                    $hrefDelete = "<a class=\"btn\" href=index.php?page=delete&delete-id={$id}><i class=\"bi bi-trash\"></i></a>";              
+                    $hrefUpdate = "<a class=\"btn\" href=\"index.php?page=update&update-id={$id}\"><i class=\"bi bi-arrow-repeat\"></i></a>";              
+                    $hrefDelete = "<a class=\"btn\" href=\"index.php?page=delete&delete-id={$id}\"><i class=\"bi bi-trash\"></i></a>";              
                      ?>
                     
                     <td><? echo $hrefUpdate?></td>
                     <td><? echo $hrefDelete?></td>
                 </tr>
-            <?php endforeach; ?>
+            <? endforeach; ?>
+            <? endif;?>
         </tbody>
     </table>
 </div>
